@@ -15,7 +15,7 @@ class KategoriController extends Controller
         return view('backend.content.kategori.formTambah');
     }
 
-    public function prosesTambah(Request $request){ //\http\Env\
+    public function prosesTambah(Request $request){
         $this->validate($request, [
             'nama_kategori' => 'required'
         ]);

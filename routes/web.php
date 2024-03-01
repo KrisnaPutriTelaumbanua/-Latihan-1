@@ -22,8 +22,6 @@ Route::group(['middleware' => 'auth:user'], function (){
         Route::get('/kategori/hapus/{id}',[\App\Http\Controllers\KategoriController::class, 'hapus'])->name('kategori.hapus');
 
 
-
-
     });
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('auth.logout')->middleware('auth:user');
 });
