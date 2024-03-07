@@ -20,6 +20,15 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        Kategori::firstOrCreate(['nama_kategori' => 'Nasional']);
+        DB::table('kategori')->insert([
+            'nama_kategori' => 'Nasional'
+        ]);
+        DB::table('berita')->insert([
+            'judul_berita' => 'Lorem Ipsum',
+            'isi_berita' => 'Lorem Ipsum',
+            'gambar_berita' => 'Loremm.jpg',
+            'id_kategori' => 1
+        ]);
+
     }
 }
