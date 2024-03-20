@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use Barryvdh\DomPDF\Facade\Pdf;
 class KategoriController extends Controller
 {
     public function index(){
@@ -69,4 +70,10 @@ class KategoriController extends Controller
         }
 
     }
+        public  function exportPdf(){
+        $kategori = Kategori::all();
+        $pdf = Pdf::loadView('backend.content.kategori.export', compact('kategori'));
+        return $pdf->download('Data Kategori.pdf');
+
+        }
 }
